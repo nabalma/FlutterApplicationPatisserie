@@ -9,7 +9,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
- 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -109,7 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void onOrder() {}
+  void onOrder() {
+    print(gateaux.elementAt(index));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -139,13 +140,11 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                
                 ...(gateaux.elementAt(index)['ingredients'] as List<String>)
-                    .map((unIngredient) {return
-                  Text(
+                    .map((unIngredient) {
+                  return Text(
                     unIngredient,
-                    style: TextStyle(
-                        fontSize: 13),
+                    style: TextStyle(fontSize: 13),
                   );
                 })
               ],
